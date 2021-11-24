@@ -1,0 +1,7 @@
+mutation ProductRemoveByIdMutation ($_id: MongoID) {
+    removeProduct(filter: {_id: $_id}) {
+        record {
+            _id
+        }
+    }
+}

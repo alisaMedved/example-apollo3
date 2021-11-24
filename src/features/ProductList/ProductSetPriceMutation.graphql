@@ -1,0 +1,15 @@
+# ! - означает обязательный аргумент
+# никогда не делай деньги с плавающей запятой!
+mutation ProductSetPriceMutation($_id: MongoID!, $newUnitPrice: Float!) {
+#    подумывают ввести что если название переменной совпадает с аргументом сделать так чтобы их не пришлось дублировать
+#    и сразу тут писать updateProduct($_id, )
+    updateProduct(_id: $_id,  record: {
+        unitPrice: $newUnitPrice
+    }) {
+#        f это что надо вернуть нам на фронт
+        record {
+            _id
+            unitPrice
+        }
+    }
+}

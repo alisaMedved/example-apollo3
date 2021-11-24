@@ -7,6 +7,7 @@ generates:
     plugins:
       - typescript
     config:
+#      // свои кастомные типы - это ты TS обьясняешь что это такое
       scalars:
         Date: "string"
         RegExpAsString: "string"

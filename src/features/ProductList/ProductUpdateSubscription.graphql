@@ -1,0 +1,6 @@
+subscription ProductUpdateSubscription {
+#    что вернуть серверу - обновленные поля указанной записи
+    productUpdated {
+        ...ProductListItem
+    }
+}

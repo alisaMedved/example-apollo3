@@ -1,0 +1,27 @@
+query ProductListQuery($page: Int!, $perPage: Int!) {
+    viewer {
+        productPagination(page: $page, perPage: $perPage) {
+#            данные о том какая страница пришла
+            pageInfo {
+                pageCount
+                perPage
+                currentPage
+            }
+#     totalCount
+            count
+#      ну и сам массив данных
+            items {
+#     мы и в subscription это добро юзаем - зачем дважды писать портянку полей
+                ...ProductListItem
+#                _id,
+#                productID
+#                name
+#                unitPrice
+#                supplier {
+#                    companyName
+#                }
+            }
+        }
+    }
+}
+
